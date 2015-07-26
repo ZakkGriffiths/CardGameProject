@@ -17,13 +17,15 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         Player rich, zakk;
-        rich = new Player("Rich");
-        zakk = new Player("Zakk");
+        rich = new Player("Rich", Player.PlayerClass.DRUID, 10);
+        zakk = new Player("Zakk", Player.PlayerClass.MAGE, 10);
 
         Deck deck = Deck.makeDeck(20);
         deck.dealCards(7, rich, zakk);
 
         rich.playCard(2).on(zakk);
+
+
     }
 
     @Override

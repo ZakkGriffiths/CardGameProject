@@ -14,21 +14,28 @@ public class Player {
     private final String name;
     private final Hand hand;
 
+    public enum PlayerClass {
+        WARRIOR,
+        MAGE,
+        WARLOCK,
+        DRUID,
+        PRIEST,
+        HUNTER,
+        SHAMAN,
+        ROGUE,
+        PALADIN;
+    }
     private int health;
 
     private int strength;
     private int defense;
+    private final PlayerClass playerClass;
 
-    public Player(String name, int health) {
+    public Player(String name, PlayerClass playerClass,  int health) {
         this.name = name;
         this.health = health;
         this.hand = new Hand();
-    }
-
-    public Player(String name) {
-        this.name = name;
-        this.health = 10;
-        this.hand = new Hand();
+        this.playerClass = playerClass;
     }
 
     public boolean drawCard(Deck deck) {

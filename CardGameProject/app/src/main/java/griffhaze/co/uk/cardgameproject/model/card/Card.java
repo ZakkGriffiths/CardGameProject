@@ -11,7 +11,6 @@ import griffhaze.co.uk.cardgameproject.model.player.Player;
  */
 public abstract class Card implements Serializable {
 
-    private static List<Card> allCards;
     private boolean isFaceUp;
 
     private final String name;
@@ -39,15 +38,6 @@ public abstract class Card implements Serializable {
 
     public void setIsFaceUp(boolean isFaceUp) {
         this.isFaceUp = isFaceUp;
-    }
-
-    /**
-     * Add a new card to the game
-     *
-     * @param card
-     */
-    public static void addCard(Card card) {
-        allCards.add(card);
     }
 
     /**
@@ -101,6 +91,7 @@ public abstract class Card implements Serializable {
      * @return a card that has been added to the game
      */
     public static Card createRandomCard() {
-        return allCards.get((int) (Math.random() * (allCards.size()) - 1));
+        // TODO
+        return null;
     }
 }

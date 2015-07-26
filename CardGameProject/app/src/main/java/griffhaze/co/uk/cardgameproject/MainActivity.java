@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import griffhaze.co.uk.cardgameproject.model.card.Deck;
+import griffhaze.co.uk.cardgameproject.model.player.Player;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -12,6 +15,15 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Player rich, zakk;
+        rich = new Player("Rich");
+        zakk = new Player("Zakk");
+
+        Deck deck = Deck.makeDeck(20);
+        deck.dealCards(7, rich, zakk);
+
+        rich.playCard(2).on(zakk);
     }
 
     @Override

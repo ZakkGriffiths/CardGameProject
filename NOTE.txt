@@ -1,0 +1,5 @@
+HearthStoned Notes
+
+Project to replicate Hearthstone game.
+
+
